@@ -1,0 +1,23 @@
+log out/logKanzi.log
+vm kanzi.xml
+
+# binary [featurewise|pairwise|allbinary]
+# binary featurewise
+# binary pairwise
+# binary allbinary
+binary random numConfigs:1000 seed:0
+
+# numeric plackettburman [measurements:125 level:5|measurements:49 level:7]
+#numeric plackettburman measurements:125 level:5
+numeric plackettburman measurements:49 level:7
+
+# [system]_config_[feature|t_2]_pdb_[125_5|49_7].txt
+# system: [catena|sunflow|h2|pmd|cpd|density-converter|prevayler|kanzi]
+# printconfigs out/kanzi_config_allbinary_pdb_49_7.txt prefix postfix
+# printconfigs out/kanzi_config_allbinary_pdb_49_7.csv
+# printconfigs out/kanzi_config_featurewise_pdb_49_7.txt prefix postfix
+# printconfigs out/kanzi_config_featurewise_pdb_49_7.csv
+# printconfigs out/kanzi_config_pairwise_pdb_49_7.txt prefix postfix
+# printconfigs out/kanzi_config_pairwise_pdb_49_7.csv
+
+printconfigs out/kanzi_config_rnd_pdb_49_7.txt prefix postfix

@@ -1,0 +1,5 @@
+16:32:20.598 WARN org.apache.spark.util.Utils: Your hostname, darwin resolves to a loopback address: 127.0.1.1; using 141.54.147.112 instead (on interface enp5s0)
+16:32:20.598 WARN org.apache.spark.util.Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+16:32:20.744 WARN org.apache.hadoop.util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:32:22.447 ERROR org.apache.spark.executor.CoarseGrainedExecutorBackend: RECEIVED SIGNAL TERM
+for your platform... using builtin-java classes where applicable

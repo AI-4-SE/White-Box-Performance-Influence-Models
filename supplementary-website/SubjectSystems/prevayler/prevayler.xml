@@ -1,0 +1,168 @@
+<vm name="prevayler">
+  <binaryOptions>
+    <configurationOption>
+      <name>root</name>
+      <outputString>
+      </outputString>
+      <prefix>
+      </prefix>
+      <postfix>
+      </postfix>
+      <parent>
+      </parent>
+      <impliedOptions />
+      <excludedOptions />
+      <optional>False</optional>
+    </configurationOption>
+    <configurationOption>
+      <name>RunPrevaylerTransactionTest</name>
+      <outputString>
+      </outputString>
+      <prefix>
+      </prefix>
+      <postfix>
+      </postfix>
+      <parent>root</parent>
+      <impliedOptions />
+      <excludedOptions />
+      <optional>True</optional>
+    </configurationOption>
+    <configurationOption>
+      <name>RunPrevaylerQueryTest</name>
+      <outputString>
+      </outputString>
+      <prefix>
+      </prefix>
+      <postfix>
+      </postfix>
+      <parent>root</parent>
+      <impliedOptions />
+      <excludedOptions />
+      <optional>True</optional>
+    </configurationOption>
+    <configurationOption>
+      <name>NumberOfObjects</name>
+      <outputString>
+      </outputString>
+      <prefix>
+      </prefix>
+      <postfix>
+      </postfix>
+      <parent>root</parent>
+      <impliedOptions />
+      <excludedOptions />
+      <optional>False</optional>
+    </configurationOption>
+    <configurationOption>
+      <name>ONE_HUNDRED_THOUSAND</name>
+      <outputString>
+      </outputString>
+      <prefix>
+      </prefix>
+      <postfix>
+      </postfix>
+      <parent>NumberOfObjects</parent>
+      <impliedOptions />
+      <excludedOptions>
+        <options>ONE_MILLION</options>
+      </excludedOptions>
+      <optional>False</optional>
+    </configurationOption>
+    <configurationOption>
+      <name>ONE_MILLION</name>
+      <outputString>
+      </outputString>
+      <prefix>
+      </prefix>
+      <postfix>
+      </postfix>
+      <parent>NumberOfObjects</parent>
+      <impliedOptions />
+      <excludedOptions>
+        <options>ONE_HUNDRED_THOUSAND</options>
+      </excludedOptions>
+      <optional>False</optional>
+    </configurationOption>
+    <configurationOption>
+      <name>TransactionTestCheckConsistency</name>
+      <outputString>
+      </outputString>
+      <prefix>
+      </prefix>
+      <postfix>
+      </postfix>
+      <parent>RunPrevaylerTransactionTest</parent>
+      <impliedOptions />
+      <excludedOptions />
+      <optional>True</optional>
+    </configurationOption>
+  </binaryOptions>
+  <numericOptions>
+    <configurationOption>
+      <name>PrevaylerQueryThreadsMinimum</name>
+      <outputString>
+      </outputString>
+      <prefix>
+      </prefix>
+      <postfix>
+      </postfix>
+      <parent>RunPrevaylerQueryTest</parent>
+      <impliedOptions />
+      <excludedOptions />
+      <minValue>1</minValue>
+      <maxValue>5</maxValue>
+      <stepFunction>PrevaylerQueryThreadsMinimum + 1</stepFunction>
+    </configurationOption>
+    <configurationOption>
+      <name>PrevaylerQueryThreadsMaximum</name>
+      <outputString>
+      </outputString>
+      <prefix>
+      </prefix>
+      <postfix>
+      </postfix>
+      <parent>RunPrevaylerQueryTest</parent>
+      <impliedOptions />
+      <excludedOptions />
+      <minValue>1</minValue>
+      <maxValue>5</maxValue>
+      <stepFunction>PrevaylerQueryThreadsMaximum + 1</stepFunction>
+    </configurationOption>
+    <configurationOption>
+      <name>PrevaylerTransactionThreadsMinimum</name>
+      <outputString>
+      </outputString>
+      <prefix>
+      </prefix>
+      <postfix>
+      </postfix>
+      <parent>RunPrevaylerTransactionTest</parent>
+      <impliedOptions />
+      <excludedOptions />
+      <minValue>1</minValue>
+      <maxValue>5</maxValue>
+      <stepFunction>PrevaylerTransactionThreadsMinimum + 1</stepFunction>
+    </configurationOption>
+    <configurationOption>
+      <name>PrevaylerTransactionThreadsMaximum</name>
+      <outputString>
+      </outputString>
+      <prefix>
+      </prefix>
+      <postfix>
+      </postfix>
+      <parent>RunPrevaylerTransactionTest</parent>
+      <impliedOptions />
+      <excludedOptions />
+      <minValue>1</minValue>
+      <maxValue>5</maxValue>
+      <stepFunction>PrevaylerTransactionThreadsMaximum + 1</stepFunction>
+    </configurationOption>
+  </numericOptions>
+  <booleanConstraints />
+  <nonBooleanConstraints>
+    <constraint>PrevaylerQueryThreadsMaximum &gt;= PrevaylerQueryThreadsMinimum</constraint>
+    <constraint>PrevaylerTransactionThreadsMaximum &gt;= PrevaylerTransactionThreadsMinimum</constraint>
+  </nonBooleanConstraints>
+  <mixedConstraints />
+</vm>

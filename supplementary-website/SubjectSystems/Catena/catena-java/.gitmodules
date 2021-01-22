@@ -1,0 +1,3 @@
+[submodule "catena/src/test/resources"]
+	path = catena/src/test/resources
+	url = https://github.com/medsec/catena-test-vectors.git

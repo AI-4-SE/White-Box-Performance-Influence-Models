@@ -1,0 +1,355 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>7</version>
+  </parent>
+
+  <groupId>org.prevayler</groupId>
+  <artifactId>prevayler</artifactId>
+  <version>2.7-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+
+  <name>Prevayler</name>
+  <description>Prevayler is the open source Java prevalence layer.</description>
+  <url>http://www.prevayler.org/</url>
+  <inceptionYear>2001</inceptionYear>
+
+  <modules>
+    <module>core</module>
+    <module>tests</module>
+    <module>factory</module>
+    <module>extras</module>
+    <module>spikes</module>
+    <module>demos</module>
+  </modules>
+
+
+  <licenses>
+    <license>
+      <name>BSD</name>
+      <url>https://github.com/prevayler/prevayler/blob/master/LICENSE.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <properties>
+    <skipTests>false</skipTests>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <profiles>
+    <profile>
+      <id>use-javac-source-and-target</id>
+      <activation>
+        <jdk>(,1.9)</jdk>
+      </activation>
+      <properties>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+      </properties>
+    </profile>
+    <profile>
+      <id>use-javac-release</id>
+      <activation>
+        <jdk>[1.9,)</jdk>
+      </activation>
+      <properties>
+        <maven.compiler.release>6</maven.compiler.release>
+      </properties>
+    </profile>
+  </profiles>
+
+  <mailingLists>
+    <mailingList>
+      <name>Users list</name>
+      <archive>http://sourceforge.net/mailarchive/forum.php?forum_name=prevayler-discussion</archive>
+      <post>mailto:prevayler-discussion@lists.sourceforge.net</post>
+      <subscribe>mailto:prevayler-discussion-request@lists.sourceforge.net?subject=subscribe</subscribe>
+      <unsubscribe>mailto:prevayler-discussion-request@lists.sourceforge.net?subject=unsubscribe</unsubscribe>
+    </mailingList>
+
+    <mailingList>
+      <name>Developers list</name>
+      <archive>http://sourceforge.net/mailarchive/forum.php?forum_name=prevayler-coders</archive>
+      <post>mailto:prevayler-coders@lists.sourceforge.net</post>
+      <subscribe>mailto:prevayler-coders-request@lists.sourceforge.net?subject=subscribe</subscribe>
+      <unsubscribe>mailto:prevayler-coders-request@lists.sourceforge.net?subject=unsubscribe</unsubscribe>
+    </mailingList>
+
+    <mailingList>
+      <name>Newsletter</name>
+      <archive>http://sourceforge.net/mailarchive/forum.php?forum_name=prevayler-english</archive>
+      <post>mailto:prevayler-english@lists.sourceforge.net</post>
+      <subscribe>mailto:prevayler-english-request@lists.sourceforge.net?subject=subscribe</subscribe>
+      <unsubscribe>mailto:prevayler-english-request@lists.sourceforge.net?subject=unsubscribe</unsubscribe>
+    </mailingList>
+  </mailingLists>
+
+  <issueManagement>
+    <system>github</system>
+    <url>https://github.com/prevayler/prevayler/issues</url>
+  </issueManagement>
+
+  <scm>
+    <connection>scm:git:git://github.com/prevayler/prevayler.git</connection>
+    <developerConnection>scm:git:git@github.com:prevayler/prevayler.git</developerConnection>
+  </scm>
+
+  <developers>
+    <developer>
+      <id>jsampson</id>
+      <name>Justin T. Sampson</name>
+    </developer>
+    <developer>
+      <id>karlwettin</id>
+      <name>Karl Wettin</name>
+    </developer>
+    <developer>
+      <id>klauswuestefeld</id>
+      <name>Klaus Wuestefeld</name>
+    </developer>
+  </developers>
+
+  <contributors>
+    <contributor>
+      <name>Aleksey Aristov</name>
+    </contributor>
+    <contributor>
+      <name>Eric Bridgwater</name>
+    </contributor>
+    <contributor>
+      <name>Toby Cabot</name>
+    </contributor>
+    <contributor>
+      <name>Naveen Chawla</name>
+    </contributor>
+    <contributor>
+      <name>Peter Haig</name>
+    </contributor>
+    <contributor>
+      <name>Hans Haggstrom</name>
+    </contributor>
+    <contributor>
+      <name>Tobias Hill</name>
+    </contributor>
+    <contributor>
+      <name>Jacob Kjome</name>
+    </contributor>
+    <contributor>
+      <name>Christian Klemke</name>
+    </contributor>
+    <contributor>
+      <name>Frederic Langlet</name>
+    </contributor>
+    <contributor>
+      <name>Alexandre Nodari</name>
+    </contributor>
+    <contributor>
+      <name>Stefan Ortmanns</name>
+    </contributor>
+    <contributor>
+      <name>William Pietri</name>
+    </contributor>
+    <contributor>
+      <name>Christian Stein</name>
+    </contributor>
+    <contributor>
+      <name>Jon Tirsen</name>
+    </contributor>
+    <contributor>
+      <name>Carlos Villela</name>
+    </contributor>
+  </contributors>
+
+
+  <dependencyManagement>
+    <dependencies>
+
+      <!-- our modules -->
+
+      <dependency>
+        <groupId>org.prevayler</groupId>
+        <artifactId>prevayler-core</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.prevayler</groupId>
+        <artifactId>prevayler-factory</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.prevayler</groupId>
+        <artifactId>prevayler-tests</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.prevayler.extras</groupId>
+        <artifactId>prevayler-xstream</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.prevayler.extras</groupId>
+        <artifactId>prevayler-log4j</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.prevayler.spikes</groupId>
+        <artifactId>prevayler-mirror</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.prevayler.spikes</groupId>
+        <artifactId>prevayler-mirror-tests</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+
+      <!-- 3rd party  -->
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+        <!--<scope>test</scope>-->
+      </dependency>
+
+      <dependency>
+        <groupId>xpp3</groupId>
+        <artifactId>xpp3_min</artifactId>
+        <version>1.1.4c</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.thoughtworks.xstream</groupId>
+        <artifactId>xstream</artifactId>
+        <version>1.4.11.1</version>
+      </dependency>
+
+
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <defaultGoal>install</defaultGoal>
+
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.1.1</version>
+        <configuration>
+          <additionalOptions>-Xdoclint:none</additionalOptions>
+        </configuration>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.8.2</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>3.0.0</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.1.1</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.1.2</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-install-plugin</artifactId>
+        <version>3.0.0-M1</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.1.0</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <encoding>UTF-8</encoding>
+          <fork>true</fork> <!-- enables usage of compilerArgs -->
+          <showWarnings>true</showWarnings>
+          <failOnWarning>true</failOnWarning>
+          <compilerArgs>
+            <arg>-Xlint:all</arg>
+            <arg>-Xlint:-options</arg> <!-- suppresses bootclasspath warning when using higher-version Java compiler than target -->
+            <arg>-Xlint:-path</arg> <!-- suppresses warnings when running tests due to modules that do not have any test classes -->
+          </compilerArgs>
+        </configuration>
+      </plugin>
+
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.22.2</version>
+        <configuration>
+          <forkMode>once</forkMode>
+          <!--<argLine>-Xms256m -Xmx256m</argLine>-->
+          <testFailureIgnore>false</testFailureIgnore>
+          <redirectTestOutputToFile>true</redirectTestOutputToFile>
+        </configuration>
+      </plugin>
+    </plugins>
+
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.5.3</version>
+          <configuration>
+            <autoVersionSubmodules>true</autoVersionSubmodules>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+  </build>
+
+</project>

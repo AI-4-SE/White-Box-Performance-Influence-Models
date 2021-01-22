@@ -1,0 +1,21 @@
+Thanks to Prevayler contributors:
+	
+	Aleksey Aristov
+	Eric Bridgwater
+	Toby Cabot
+	Naveen Chawla
+	Peter Haig
+	Hans Haggstrom
+	Tobias Hill
+	Jacob Kjome
+	Frederic Langlet
+	Alexandre Nodari
+	Stefan Ortmanns
+	William Pietri
+	Justin Sampson
+	Jon Tirsen
+	Carlos Villela
+	Karl Wettin
+	Klaus Wuestefeld
+
+(This list with more details is also available in file pom.xml)

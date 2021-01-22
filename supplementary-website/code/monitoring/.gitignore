@@ -1,0 +1,5 @@
+run_confidence_tests.sh
+profiler_log.txt
+stderr.txt
+stdout.txt
+

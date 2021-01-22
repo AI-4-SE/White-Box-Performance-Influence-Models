@@ -1,0 +1,6 @@
+16:31:53.773 WARN org.apache.spark.util.Utils: Your hostname, darwin resolves to a loopback address: 127.0.1.1; using 141.54.147.112 instead (on interface enp5s0)
+16:31:53.773 WARN org.apache.spark.util.Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+16:31:53.930 WARN org.apache.hadoop.util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:31:55.528 WARN org.apache.spark.sql.execution.streaming.state.HDFSBackedStateStoreProvider: The state for version 1 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+16:31:55.631 ERROR org.apache.spark.executor.CoarseGrainedExecutorBackend: RECEIVED SIGNAL TERM
+he state for version 1 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
