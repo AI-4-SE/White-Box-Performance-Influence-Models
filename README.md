@@ -31,12 +31,10 @@ Each file in the ```supplementary-website/data/``` folder contains the measureme
 
 Files conteining ```*__rnd100__*``` belong to the test set of the corresponding subject systems.
 
-
-## Installation
+## Programs and Scripts
 
 To run the provided scripts please install the `requirements.txt`.
 
-## Programs and Scripts
 
 **Profiling a System**
 
@@ -46,19 +44,14 @@ We provide all neccessary scripts for profiling a softwaresystem in the ```suppl
 ./start_slurm_run.sh <path/to/configurations> <number repetitions> <profiler> <slurm partition>
 ./start_slurm_run.sh samplingStrategies/catena/catena_config_feature_pbd_125_5.txt 5 None planck
 ```
-
-**Generating Method-Level Models**
-
-
-
-## Usage
-
-**Profiling a System**
-
+The profiling data has to be processed with the `supplementary-website/code/modeling/monitoringDataParser.py` script. We provide the already parsed data in the ```supplementary-website/data/``` folder, because parsing it costs us several days and reduces the storage requirements.
 
 
 **Generating Method-Level Models**
 
-modeling:
+
+
+The scripts needed for generating method-level performance models are in the `supplementary-website/code/modeling/` folder.
+
 1. extract data with [gzip](https://wiki.ubuntuusers.de/gzip/)
 2. ```learn_method_level_model.py <in_file> <eval_file> <output_path>```
