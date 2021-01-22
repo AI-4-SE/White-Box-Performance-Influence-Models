@@ -1,9 +1,8 @@
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 
-
 # White-Box Performance-Influence Models
 
-White-box performance-influence models is an approach for modeling configuration-dependent software properties (like performance) at the method level. With these models one can predict the performance of methods given the configuration on a software system.
+We device an approach for medeling configuration-dependent software properties (like performance) at the method level. With these models one can predict the performance of methods given a configuration of a software system.
 
 The approach consists of two steps: First, a coarse-grained profiler (jProfiler) is used to measure the performance of each method that gets executed. This is done for different configurations. Performance-influence models are then used to learn a model for each method.
 
