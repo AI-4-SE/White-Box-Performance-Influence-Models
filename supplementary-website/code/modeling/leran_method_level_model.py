@@ -143,7 +143,6 @@ def jProfiler_modeling(file, system, evaluation_data):
 
             performance_of_methods.append(method_sub_df['perf'].mean())
             configuration_variance.append(method_sub_df['perf'].std()/method_sub_df['perf'].mean())
-        break
 
 
     print('Number methods skipped:', len(skipped_methods), 'of', len(groups))
@@ -194,6 +193,8 @@ def kieker_modeling(file, system, evaluation_data):
             skipped_methods.append(m)
             continue
 
+        eval_df = df = pd.read_pickle(evaluation_data)
+        
         repetitions = method_df.rep.unique()
         for r in repetitions:
 
@@ -211,7 +212,6 @@ def kieker_modeling(file, system, evaluation_data):
 
             performance_of_methods.append(method_sub_df['sum_r'].mean())
             configuration_variance.append(method_sub_df['sum_r'].std()/method_sub_df['std_r'].mean())
-        break
 
     print('Number methods skipped:', len(skipped_methods), 'of', len(groups))
     #print(len(methodnames), methodnames)

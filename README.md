@@ -34,22 +34,22 @@ Files conteining ```*__rnd100__*``` belong to the test set of the corresponding 
 
 ## Installation
 
-requirements.txt
-
+To run the provided scripts please install the `requirements.txt`.
 
 ## Programs and Scripts
 
 **Profiling a System**
 
-For profiling, it is neccessary to have a slurm cluster running. To set up the slurm workload manager we refer to the official guides and tutorials: [slurm](https://slurm.schedmd.com/overview.html). It is neccessary to have at least some experience with slurm to run these measurement scripts.
+For profiling, it is neccessary to have a slurm cluster running. To set up the slurm workload manager we refer to the official guides and tutorials: [Slurm WL](https://slurm.schedmd.com/overview.html). It is neccessary to have at least some experience with slurm to run these measurement scripts.
 We provide all neccessary scripts for profiling a softwaresystem in the ```supplementary-website/code/monitoring/``` directory. The output path has to be defined on the file `supplementary-website/code/monitoring/monitoring/profiling/abstractprofiler.py` as `self.base_output_path = '/tmp/'`. This has to be done only once for the slurm cluster. The file ```supplementary-website/code/monitoring/start_slurm_run.sh``` serves as the startscript that is executed in the slurm master. The interface is:
 ```
 ./start_slurm_run.sh <path/to/configurations> <number repetitions> <profiler> <slurm partition>
 ./start_slurm_run.sh samplingStrategies/catena/catena_config_feature_pbd_125_5.txt 5 None planck
 ```
 
-
 **Generating Method-Level Models**
+
+
 
 ## Usage
 
