@@ -49,9 +49,9 @@ The profiling data has to be processed with the `supplementary-website/code/mode
 
 **Generating Method-Level Models**
 
-
-
-The scripts needed for generating method-level performance models are in the `supplementary-website/code/modeling/` folder.
-
-1. extract data with [gzip](https://wiki.ubuntuusers.de/gzip/)
-2. ```learn_method_level_model.py <in_file> <eval_file> <output_path>```
+After cloning this repository, it is neccessary to extract the profiling data (```supplementary-website/data/```). After that, all neccessary scripts to crete the performance-influence models are in the ```supplementary-website/code/modeling/``` folder. The following shows the cli and an example call of the script.
+```
+learn_method_level_model.py <in_file> <eval_file> <output_path>
+learn_method_level_model.py ./../../experiment_data/data/density-converter__t_2_pbd_49_7__jProfiler.pkl.gz ./../../experiment_data/data/density-converter__rnd100__jProfiler.pkl /tmp/
+```
+The results will be written to the `<output_path>`. The `<in_file>` and the `<eval_file>` have to be profiling data files, generated with the `monitoringDataParser.py`. Note that there are files that are profiled additionally as test set (`*__rnd100__*`). These files exist for each subject system and profiler.
