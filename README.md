@@ -21,7 +21,10 @@ This approach assumes that a software system has be elected before. Next, a set 
 Profiling is done by executing the software systems while collecting performance data via a profiler. Each configuration is executed individually with a new instance of the JVM. We used [jProfiler](https://www.ej-technologies.com/products/jprofiler/overview.html) as the coarse-grained profiler, getting the measured execution time of each individual method of the subject system. We used [Kieker](http://kieker-monitoring.net/), an instrumentation-based profiler, for measuring the execution time for each individual method execution of the set of instrumented methods. The instrumentation is done manually. This profling step may results in large ammounts of data. Therefore, we compressed the results of each program execution during measurement to be able to save the data.
 
 **Filter Methods + Filter Outlier**
-The abstractprofiler.py in the monitoring/monitoring/profiling/ folder
+
+(Filter Methods) After learning a model from the coarse-grained data, we decide for each method whether to include it in the second step.
+
+(Filter Outlier) The `abstractprofiler.py` in the `monitoring/monitoring/profiling/` folder implements the outlier filter. This filtering step has to be applied direct after the fine-grained profiling. Each profiling step may produce several terabytes of data. For each method, we remove the 100th percentile of the method calls with regard to execution time.
 
 
 ## Data
