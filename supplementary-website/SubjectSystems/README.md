@@ -38,6 +38,10 @@ We identified different patter for the influence of the profiler on the subject 
 
 ![Profiler Influence Prevayler](profiled-vs-unprofiled/profiler_corellation_prevayler_t_2_pbd_49_7.png)
 
+#### H2
+
+![Profiler Influence H2](profiled-vs-unprofiled/profiler_corellation_h2_t_2_pbd_125_5.png)
+
 #### Sunflow
 
 ![Profiler Influence Sunflow](profiled-vs-unprofiled/profiler_corellation_sunflow_feature_pbd_125_5.png)
