@@ -1,8 +1,8 @@
 ## Installation
 
-For reproduction of our results, we provide a description for a manual setup showing the steps to perform on a Linux-based operating system to repoduce the results of this work.
+For reproduction of our results, we provide a description for a manual setup showing the steps using a Linux-based operating system to repoduce the results of this work. Before installing we refer to the `REQUIREMENTS.md` to see whether the respective setup meets the requirements.
 
-To run the provided python scripts please install the `requirements.txt` fom the `supplementary-website/code/` folder.
+To run the provided python scripts please install the `requirements.txt` from the `supplementary-website/code/` folder.
 
 **Profiling a System**
 
@@ -12,7 +12,7 @@ We provide all neccessary scripts for profiling a softwaresystem in the ```suppl
 ./start_slurm_run.sh <path/to/configurations> <number repetitions> <profiler> <slurm partition>
 ./start_slurm_run.sh samplingStrategies/catena/catena_config_feature_pbd_125_5.txt 5 None planck
 ```
-The profiling data has to be processed with the `supplementary-website/code/modeling/monitoringDataParser.py` script. We provide the already parsed data in the ```supplementary-website/data/``` folder, because parsing it costs us several days and reduces the storage requirements.
+The profiling data has to be processed with the `supplementary-website/code/modeling/monitoringDataParser.py` script. We provide the already parsed data in the ```supplementary-website/data/``` folder. Profiling the execution time of all methods of the subject systems costs us 19 years of CPU time, parsing it costs us several days. Providing our measurement data reduces the time to reproduce the results a lot.
 
 
 **Generating Method-Level Models**
