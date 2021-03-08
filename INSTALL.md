@@ -3,23 +3,3 @@
 For reproduction of our results, we provide a description for a manual setup showing the steps using a Linux-based operating system to repoduce the results of this work. Before installing we refer to the `REQUIREMENTS.md` to see whether the respective setup meets the requirements.
 
 To run the provided python scripts please install the `requirements.txt` from the `supplementary-website/code/` folder.
-
-**Profiling a System**
-
-For profiling, it is neccessary to have a slurm cluster running. To set up the slurm workload manager we refer to the official guides and tutorials: [Slurm WL](https://slurm.schedmd.com/overview.html). It is neccessary to have at least some experience with slurm to run these measurement scripts.
-We provide all neccessary scripts for profiling a softwaresystem in the ```supplementary-website/code/monitoring/``` directory. The output path has to be defined on the file `supplementary-website/code/monitoring/monitoring/profiling/abstractprofiler.py` as `self.base_output_path = '/tmp/'`. This has to be done only once for the slurm cluster. The file ```supplementary-website/code/monitoring/start_slurm_run.sh``` serves as the startscript that is executed in the slurm master. The interface is:
-```
-./start_slurm_run.sh <path/to/configurations> <number repetitions> <profiler> <slurm partition>
-./start_slurm_run.sh samplingStrategies/catena/catena_config_feature_pbd_125_5.txt 5 None planck
-```
-The profiling data has to be processed with the `supplementary-website/code/modeling/monitoringDataParser.py` script. We provide the already parsed data in the ```supplementary-website/data/``` folder. Profiling the execution time of all methods of the subject systems costs us 19 years of CPU time, parsing it costs us several days. Providing our measurement data reduces the time to reproduce the results a lot.
-
-
-**Generating Method-Level Models**
-
-After cloning this repository, it is neccessary to extract the profiling data (```supplementary-website/data/```). After that, all neccessary scripts to crete the performance-influence models are in the ```supplementary-website/code/modeling/``` folder. The following shows the command line interface and an example call of the script.
-```
-learn_method_level_model.py <in_file> <eval_file> <output_path>
-learn_method_level_model.py ./../../experiment_data/data/density-converter__t_2_pbd_49_7__jProfiler.pkl.gz ./../../experiment_data/data/density-converter__rnd100__jProfiler.pkl /tmp/
-```
-The results will be written to the `<output_path>`. The `<in_file>` and the `<eval_file>` have to be profiling data files, generated with the `monitoringDataParser.py`. Note that there are files that are profiled additionally as test set (`*__rnd100__*`). These files exist for each subject system and profiler.

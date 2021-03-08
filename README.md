@@ -6,7 +6,7 @@ We device an approach for medeling configuration-dependent software properties (
 
 The approach consists of two steps: First, a coarse-grained profiler (jProfiler) is used to measure the performance of each method that is executed. This is done for different configurations. We then learn performance-influence models for each method.
 
-The second step then focuses on measurement and analyse of a subset of methods. Here, another profiler (Kieker) is used to measure all induvidual method executions, which may result in terrabytes of method execution data, depending on the number of method executions. This data however is summaryzed with histograms, reducing the footprint to few megabytes. 
+The second step then focuses on measurement and analyse of a subset of methods. Here, another profiler (Kieker) is used to measure all induvidual method executions, which may result in terrabytes of method execution data, depending on the number of method executions. This data however is summaryzed with histograms, reducing the footprint to few megabytes.
 
 ## Overview
 
@@ -33,9 +33,29 @@ Each file in the ```supplementary-website/data/``` folder contains the measureme
 
 Files containing ```*__rnd100__*``` belong to the test set of the corresponding subject systems.
 
-## Programs and Scripts
 
-To run the provided scripts please install the `requirements.txt`.
+
+## Requirements
+
+### Profiling Performance
+
+Hardware requirements depend on the software system and the workload should be executed in the experiments. We measured 9 real-word Java software systems with 27 desktop computers, each of them equipped with an Intel Quad-Core processor, an SSD running Ubuntu 18.04.03 LTS headless, an HDD to store the profiling data, and 8GB or 16GB of RAM (we grouped the cluster such that each group a consistent amount of RAM).
+On each node of the cluster there is `java-8-openjdk` and `Python 3.7.5` installed.
+
+
+### Learning Method-Level Models
+
+We used an Laptop with an i7-10710U processor, 16GB RAM and 500GB SSD running an Manjaro Linux. To execute the modeling scripts you need to have `Python 3` installed with all python packages listed in the `requirements.txt`.
+
+
+## Installation
+
+For reproduction of our results, we provide a description for a manual setup showing the steps using a Linux-based operating system to repoduce the results of this work. Before installing we refer to the `REQUIREMENTS.md` to see whether the respective setup meets the requirements.
+
+To run the provided python scripts please install the `requirements.txt` from the `supplementary-website/code/` folder.
+
+
+## Programs and Scripts
 
 **Profiling a System**
 
@@ -48,7 +68,7 @@ An example call is:
 ```
 ./start_slurm_run.sh samplingStrategies/catena/catena_config_feature_pbd_125_5.txt 5 None planck
 ```
-The profiling data has to ben processed with the `supplementary-website/code/modeling/monitoringDataParser.py` script. We provide the already parsed data in the ```supplementary-website/data/``` folder, because parsing it cost us several days and reduced the storage requirements.
+The profiling data has to be processed with the `supplementary-website/code/modeling/monitoringDataParser.py` script. We provide the already parsed data in the ```supplementary-website/data/``` folder. Profiling the execution time of all methods of the subject systems costs us 19 years of CPU time, parsing it costs us several days. Providing our measurement data reduces the time to reproduce the results a lot.
 
 
 **Generating Method-Level Models**
